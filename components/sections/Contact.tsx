@@ -13,40 +13,20 @@ import { useToast } from "@/components/ui/use-toast";
 import { useLanguage } from "@/contexts/language-context";
 import { translations } from "@/lib/translations";
 
-import { useTheme } from "next-themes"; // Importar useTheme
+interface ContactProps {
+  activeSection: string;
+  darkMode: boolean;
+  setDarkMode: (value: boolean) => void;
+}
 
-export default function Contact() {
-  const { theme, resolvedTheme } = useTheme(); // Obtener el tema actual
+export default function Contact({
+  activeSection,
+  darkMode,
+  setDarkMode,
+}: ContactProps) {
   const { language } = useLanguage();
   const { toast } = useToast();
   const [subject, setSubject] = useState("");
-  const [mounted, setMounted] = useState(false); // Estado para controlar el montaje
-  const [isDarkTheme, setIsDarkTheme] = useState(false); // Estado específico para el tema
-
-  // Asegurarse de que el componente está montado para evitar problemas de hidratación
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  // Detectar cambios de tema y actualizar el estado
-  useEffect(() => {
-    if (mounted) {
-      // Verificar si estamos en modo oscuro
-      const isSystemDark =
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const isThemeDark = resolvedTheme === "dark";
-
-      console.log("Theme detection:", {
-        theme,
-        resolvedTheme,
-        isSystemDark,
-        isThemeDark,
-      });
-
-      setIsDarkTheme(isThemeDark);
-    }
-  }, [theme, resolvedTheme, mounted]);
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -174,17 +154,17 @@ export default function Contact() {
             </div>
             <Card className="mt-6 overflow-hidden">
               <CardContent className="p-0">
-                {/*<Image
+                <Image
                   src={
-                    isDarkTheme
+                    darkMode
                       ? "/Logo_full_name_white.png"
                       : "/Logo_full_name.png"
                   }
                   width={374}
                   height={213}
                   alt="Location Map"
-                  className="mx-auto w-[150px] h-auto object-contain"
-                />*/}
+                  className="mx-auto w-[150px] h-auto my-2 object-contain"
+                />
               </CardContent>
             </Card>
           </motion.div>
