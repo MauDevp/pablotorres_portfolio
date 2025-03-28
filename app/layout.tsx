@@ -11,7 +11,21 @@ export const metadata = {
   title: "Pablo Torres - Digital Marketing Expert",
   description: "Elevating brands with data-driven strategies and AI-powered insights that deliver measurable results.",
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: [
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    other: [
+      { rel: "apple-touch-icon", url: "/apple-touch-icon.png" },
+      { rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#5bbad5" },
+    ],
   },
   keywords: ["Pablo Torres", "Digital Marketing", "AI-powered insights", "Elevating brands", "portfolio", "Data-driven strategies", "AI insights", "brand strategy", "Measurable results"],
   authors: [
@@ -61,6 +75,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <meta name="apple-mobile-web-app-title" content="Pablo Torres" />
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <LanguageProvider>
