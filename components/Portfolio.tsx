@@ -72,10 +72,10 @@ export default function Portfolio() {
               {translations.portfolio.tabs.all[language]}
             </TabsTrigger>
             <TabsTrigger
-              value="medios"
+              value="media"
               className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
             >
-              {translations.portfolio.tabs.seo[language]}
+              {translations.portfolio.tabs.media[language]}
             </TabsTrigger>
             <TabsTrigger
               value="social"
@@ -84,10 +84,10 @@ export default function Portfolio() {
               {translations.portfolio.tabs.social[language]}
             </TabsTrigger>
             <TabsTrigger
-              value="content"
+              value="marketing"
               className="rounded-full data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
             >
-              {translations.portfolio.tabs.content[language]}
+              {translations.portfolio.tabs.marketing[language]}
             </TabsTrigger>
           </TabsList>
 
@@ -105,7 +105,7 @@ export default function Portfolio() {
             </motion.div>
           </TabsContent>
 
-          <TabsContent value="seo" className="mt-0">
+          <TabsContent value="media" className="mt-0">
             <motion.div
               className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
               initial="hidden"
@@ -114,7 +114,7 @@ export default function Portfolio() {
               variants={staggerContainer}
             >
               {projects
-                .filter((project) => project.category.en === "SEO")
+                .filter((project) => project.category.en === "Media Plan")
                 .map((project) => (
                   <ProjectItem key={project.id} project={project} language={language} fadeIn={fadeIn} />
                 ))}
@@ -137,7 +137,7 @@ export default function Portfolio() {
             </motion.div>
           </TabsContent>
 
-          <TabsContent value="content" className="mt-0">
+          <TabsContent value="marketing" className="mt-0">
             <motion.div
               className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
               initial="hidden"
@@ -146,7 +146,7 @@ export default function Portfolio() {
               variants={staggerContainer}
             >
               {projects
-                .filter((project) => project.category.en === "Content")
+                .filter((project) => project.category.en === "Marketing Plan")
                 .map((project) => (
                   <ProjectItem key={project.id} project={project} language={language} fadeIn={fadeIn} />
                 ))}
