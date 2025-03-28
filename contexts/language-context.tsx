@@ -19,20 +19,20 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     if (savedLanguage && (savedLanguage === "en" || savedLanguage === "es")) {
       setLanguage(savedLanguage)
     } else {
-      // Try to detect browser language
+      // Intenta detectar el lenguaje del browser
       const browserLang = navigator.language.split("-")[0]
       if (browserLang === "es") {
         setLanguage("es")
         localStorage.setItem("language", "es")
       } else {
-        // Default to English for any other language
+        // Por defecto en ingles para cualquier otro lenguaje
         setLanguage("en")
         localStorage.setItem("language", "en")
       }
     }
   }, [])
 
-  // Save language preference to localStorage when it changes
+  // Guarda en lenguaje en el local storage cuando cambia
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang)
     localStorage.setItem("language", lang)
