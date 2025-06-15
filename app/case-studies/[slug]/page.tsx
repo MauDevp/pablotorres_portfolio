@@ -192,6 +192,21 @@ export default function CaseStudyPage() {
                     {language === "en" ? "Contact Me" : "Contáctame"}
                   </Button>
                 </Link>
+
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 block"
+                  >
+                    <Button variant="outline" className="w-full">
+                      {language === "en"
+                        ? "View Project Files"
+                        : "Ver Archivos del Proyecto"}
+                    </Button>
+                  </a>
+                )}
               </div>
 
               <div className="mt-8 pt-8 border-t">

@@ -14,6 +14,7 @@ export interface Project {
   }
   slug: string // URL amigable para la página de detalle
   image: string // Ruta de la imagen del proyecto
+  link?: string // Enlace externo al proyecto (opcional, por ejemplo, enlace de Drive)
   summary: {
     en: string // Resumen del proyecto en inglés
     es: string // Resumen del proyecto en español
@@ -67,6 +68,7 @@ export const projects: Project[] =
     },
     "slug": "hiking-urban-vibes",
     "image": "/projects/hikinh_urban_vibes.jpg",
+    "link": "https://drive.google.com/drive/folders/example-hiking-urban",
     "summary": {
       "en": "Digital strategy and audiovisual content that boosted the hiking community in Madrid, increasing registration conversions by 300% and engagement by 75%.",
       "es": "Estrategia digital y contenido audiovisual que impulsó la comunidad de senderismo en Madrid, aumentando la conversión de registros en un 300% y el engagement en un 75%."
@@ -125,6 +127,7 @@ export const projects: Project[] =
     },
     "slug": "te-cambio-un-domingo-de-resaca-por-esto",
     "image": "/projects/te_cambio_urban_vibes.jpg",
+    "link": "https://drive.google.com/drive/folders/example-te-cambio-domingo",
     "summary": {
       "en": "Emotional marketing strategy and viral content that generated 12,400 views, over 80 shares, and consolidated the excursions as a sold-out event for two consecutive months.",
       "es": "Estrategia de marketing emocional y contenido viral que generó 12,400 visualizaciones, más de 80 compartidos y consolidó las excursiones como un evento lleno por dos meses consecutivos."
@@ -183,6 +186,7 @@ export const projects: Project[] =
     },
     "slug": "semana-de-la-hispanidad",
     "image": "/projects/semana_de_la_hispanidad.jpg",
+    "link": "https://drive.google.com/drive/folders/example-semana-hispanidad",
     "summary": {
       "en": "Content strategy and digital advertising that reached 27,400 views and added 15,000 new social media followers.",
       "es": "Estrategia de contenido y publicidad digital que alcanzó 27,400 visualizaciones y sumó 15,000 nuevos seguidores en redes sociales."
@@ -239,6 +243,7 @@ export const projects: Project[] =
     },
     "slug": "ulises-en-youtube",
     "image": "/projects/ulises_en_youtube.jpg",
+    "link": "https://drive.google.com/drive/folders/example-ulises-youtube",
     "summary": {
       "en": "Strategic promotion campaign that increased the artist's visibility on YouTube, achieving 2,460 views and exponential growth on Spotify.",
       "es": "Campaña de promoción estratégica que aumentó la visibilidad del artista en YouTube, logrando 2,460 visualizaciones y un crecimiento exponencial en Spotify."
@@ -297,6 +302,7 @@ export const projects: Project[] =
     },
     "slug": "boiler-room-con-ulises",
     "image": "/projects/boiler_room_ulises.jpg",
+    "link": "https://drive.google.com/drive/folders/example-boiler-room",
     "summary": {
       "en": "Storytelling strategy and audiovisual production that generated 62.8% new audience and 2 hours and 32 minutes of playback time on YouTube.",
       "es": "Estrategia de storytelling y producción audiovisual que generó un 62.8% de audiencia nueva y 2 horas y 32 minutos de tiempo de reproducción en YouTube."
@@ -355,6 +361,7 @@ export const projects: Project[] =
     },
     "slug": "impulso-de-marca-personal-para-ulises",
     "image": "/projects/marca_personal_ulises.jpg",
+    "link": "https://drive.google.com/drive/folders/example-marca-personal",
     "summary": {
       "en": "Development and implementation of a comprehensive marketing plan based on conversion funnels and omnichannel strategies, achieving exponential growth in digital presence and audience engagement.",
       "es": "Desarrollo e implementación de un plan de marketing integral basado en embudos de conversión y estrategias omnicanal, logrando un crecimiento exponencial en su presencia digital y engagement con la audiencia."
@@ -413,6 +420,7 @@ export const projects: Project[] =
     },
     "slug": "marca_de_cerveza_en_madrid",
     "image": "/projects/estrella_galicia.jpg",
+    "link": "https://drive.google.com/drive/folders/example-cerveza-madrid",
     "summary": {
       "en": "Design and implementation of a multiplatform media plan for the positioning and expansion of a craft beer brand in the Madrid market.",
       "es": "Diseño e implementación de un plan de medios multiplataforma para el posicionamiento y expansión de una marca de cerveza artesanal en el mercado madrileño."
