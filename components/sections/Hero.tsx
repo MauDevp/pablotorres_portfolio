@@ -5,12 +5,18 @@ import { motion } from "framer-motion"
 import { ArrowRight, Download } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import Orb from "../ui/OrbSimple"
+import SplitText from "@/components/ui/SplitText"
 import { useLanguage } from "@/contexts/language-context"
 import { translations } from "@/lib/translations"
 import { scrollToSection } from "@/lib/utils"
 
 export default function Hero() {
   const { language } = useLanguage()
+
+  const handleAnimationComplete = () => {
+    console.log('Pablo Torres animation completed!');
+  };
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -22,10 +28,13 @@ export default function Hero() {
   }
 
   return (
-    <section id="home" className="py-16 md:py-24 lg:py-32 xl:py-36 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-background z-0"></div>
-      <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-10 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
+    <section id="home" className="py-16 md:py-20 lg:py-20 xl:py-20 relative overflow-hidden">
+      {/* Overlay muy sutil */}
+      <div className="absolute inset-0 bg-background/15 z-[1]"></div>
+      
+      {/* Additional accent elements */}
+      <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-3xl z-[2]"></div>
+      <div className="absolute bottom-10 left-10 w-72 h-72 bg-gradient-to-tr from-accent/20 to-transparent rounded-full blur-3xl z-[2]"></div>
 
       <div className="container px-4 md:px-6 relative z-10">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
@@ -41,9 +50,34 @@ export default function Hero() {
                 {language === "en" ? "Digital Marketing Strategist" : "Mtro. Marketing Digital & Al"}
               </div>
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                <span className="text-primary">Pablo Torres</span>
+                <SplitText
+                  text="Pablo Torres"
+                  className="text-primary"
+                  delay={80}
+                  duration={0.8}
+                  ease="power3.out"
+                  splitType="chars"
+                  from={{ opacity: 0, y: 50, rotationX: -90 }}
+                  to={{ opacity: 1, y: 0, rotationX: 0 }}
+                  threshold={0.1}
+                  rootMargin="-50px"
+                  textAlign="left"
+                  onLetterAnimationComplete={handleAnimationComplete}
+                />
               </h1>
-              <h2 className="text-2xl font-bold sm:text-3xl md:text-4xl">{translations.hero.title[language]}</h2>
+              <SplitText
+                text={translations.hero.title[language]}
+                className="text-2xl font-bold sm:text-3xl md:text-4xl"
+                delay={100}
+                duration={0.7}
+                ease="power3.out"
+                splitType="words"
+                from={{ opacity: 0, y: 30, scale: 0.9 }}
+                to={{ opacity: 1, y: 0, scale: 1 }}
+                threshold={0.1}
+                rootMargin="-50px"
+                textAlign="left"
+              />
               <p className="max-w-[600px] text-muted-foreground md:text-xl mt-4">
                 {translations.hero.subtitle[language]}
               </p>
@@ -105,19 +139,79 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="relative">
-              <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-primary/30 via-primary/20 to-primary/40 blur-lg"></div>
-              <div className="absolute inset-0 rounded-lg bg-gradient-to-tr from-primary/10 to-transparent"></div>
-              <Image
-                src="/profile/Pablo_perfil_3.png"
-                width={450}
-                height={450}
-                alt="Pablo Torres - Digital Marketing Expert"
-                className="relative rounded-lg object-cover aspect-square z-10"
+            <div 
+              className="relative group cursor-pointer" 
+              style={{ width: '100%', height: '600px', position: 'relative' }}
+            >
+              {/* Orb Effect con valores por defecto */}
+              <Orb
+                hoverIntensity={0.5}
+                rotateOnHover={true}
+                hue={0}
+                forceHoverState={false}
               />
-              <div className="absolute -bottom-4 -right-4 bg-background rounded-lg p-3 shadow-lg z-20">
+              
+              {/* Profile Image positioned over the Orb */}
+              <div 
+                className="absolute inset-0 flex items-center justify-center z-10"
+                style={{ transform: 'translateY(-20px)' }}
+                onMouseEnter={(e) => {
+                  // Simular eventos de mouse en el container del Orb
+                  const orbContainer = e.currentTarget.parentElement?.querySelector('.orb-container') as HTMLElement;
+                  if (orbContainer) {
+                    const mouseEnterEvent = new MouseEvent('mouseenter', {
+                      bubbles: true,
+                      cancelable: true,
+                      clientX: e.clientX,
+                      clientY: e.clientY
+                    });
+                    orbContainer.dispatchEvent(mouseEnterEvent);
+                  }
+                }}
+                onMouseMove={(e) => {
+                  // Propagar el movimiento del mouse al Orb
+                  const orbContainer = e.currentTarget.parentElement?.querySelector('.orb-container') as HTMLElement;
+                  if (orbContainer) {
+                    const mouseMoveEvent = new MouseEvent('mousemove', {
+                      bubbles: true,
+                      cancelable: true,
+                      clientX: e.clientX,
+                      clientY: e.clientY
+                    });
+                    orbContainer.dispatchEvent(mouseMoveEvent);
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  // Simular mouse leave en el Orb
+                  const orbContainer = e.currentTarget.parentElement?.querySelector('.orb-container') as HTMLElement;
+                  if (orbContainer) {
+                    const mouseLeaveEvent = new MouseEvent('mouseleave', {
+                      bubbles: true,
+                      cancelable: true,
+                      clientX: e.clientX,
+                      clientY: e.clientY
+                    });
+                    orbContainer.dispatchEvent(mouseLeaveEvent);
+                  }
+                }}
+              >
+                <Image
+                  src="/profile/Pablo_perfil_3.png"
+                  width={380}
+                  height={380}
+                  alt="Pablo Torres - Digital Marketing Expert"
+                  className="rounded-full object-cover aspect-square"
+                  style={{
+                    filter: 'drop-shadow(0 0 25px rgba(0,0,0,0.4)) contrast(1.1) brightness(1.05) saturate(1.1)',
+                    mixBlendMode: 'normal'
+                  }}
+                />
+              </div>
+              
+              {/* Status indicator */}
+              <div className="absolute bottom-4 right-4 bg-background/90 backdrop-blur-sm rounded-lg p-3 shadow-lg z-20 transition-all duration-300 group-hover:shadow-xl group-hover:bg-background/95">
                 <div className="flex items-center gap-2">
-                  <div className="h-3 w-3 rounded-full bg-green-500"></div>
+                  <div className="h-3 w-3 rounded-full bg-green-500 group-hover:animate-pulse"></div>
                   <span className="text-sm font-medium">
                     {language === "en" ? "Available for projects" : "Disponible para proyectos"}
                   </span>

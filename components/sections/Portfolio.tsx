@@ -1,12 +1,12 @@
 "use client"
 
-import type React from "react"
-
+import React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import SplitText from "@/components/ui/SplitText"
 import { useLanguage } from "@/contexts/language-context"
 import { translations } from "@/lib/translations"
 import { projects } from "@/data/projects"
@@ -54,9 +54,19 @@ export default function Portfolio() {
             {language === "en" ? "Case Studies" : "Casos de Éxito"}
           </div>
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              {translations.portfolio.title[language]}
-            </h2>
+            <SplitText
+              text={translations.portfolio.title[language]}
+              className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
+              delay={120}
+              duration={0.6}
+              ease="power2.out"
+              splitType="words"
+              from={{ opacity: 0, y: 20 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.2}
+              rootMargin="-20px"
+              textAlign="center"
+            />
             <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               {translations.portfolio.subtitle[language]}
             </p>
@@ -160,7 +170,7 @@ export default function Portfolio() {
 
 interface ProjectItemProps {
   project: (typeof projects)[0]
-  language: string
+  language: "en" | "es"
   fadeIn: any
 }
 

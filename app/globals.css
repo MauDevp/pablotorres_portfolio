@@ -135,3 +135,36 @@ body {
   @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600;
 }
 
+/* Orb sparkle animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.orb-sparkle {
+  animation: pulse 2s infinite;
+}
+
+/* Orb sparkle animations */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.orb-sparkle {
+  animation: pulse 2s infinite;
+}
+

@@ -1,6 +1,6 @@
 "use client";
 
-import type React from "react";
+import React from "react";
 import { useEffect, useState } from "react";
 
 import Image from "next/image";
@@ -80,8 +80,7 @@ export default function Contact({
         >
           <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-2">
             {language === "en" ? "Let's Connect" : "Conectemos"}
-          </div>
-          <div className="space-y-2">
+          </div>          <div className="space-y-2">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               {translations.contact.title[language]}
             </h2>

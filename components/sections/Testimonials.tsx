@@ -1,7 +1,6 @@
 "use client"
 
-import type React from "react"
-
+import React from "react"
 import { motion } from "framer-motion"
 import { Star } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
@@ -78,7 +77,7 @@ export default function Testimonials() {
 
 interface TestimonialItemProps {
   testimonial: any
-  language: string
+  language: "en" | "es"
   fadeIn: any
 }
 

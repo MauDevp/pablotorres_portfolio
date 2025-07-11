@@ -1,8 +1,8 @@
 "use client"
 
+import React from "react"
 import { motion } from "framer-motion"
 import { Search, BarChart3, TrendingUp, Globe, MessageSquare, Mail } from "lucide-react"
-import type React from "react"
 
 import { useLanguage } from "@/contexts/language-context"
 import { translations } from "@/lib/translations"
@@ -116,9 +116,9 @@ export default function Services() {
 
 interface ServiceItemProps {
   service: any
-  language: string
+  language: "en" | "es"
   fadeIn: any
-  renderIcon: (iconName: string) => JSX.Element
+  renderIcon: (iconName: string) => React.ReactElement
   handleLearnMore: (serviceTitle: string) => void
 }
 
