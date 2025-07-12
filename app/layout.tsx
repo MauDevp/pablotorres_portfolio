@@ -1,11 +1,33 @@
 import type React from "react"
 import "@/app/globals.css"
-import { Inter } from "next/font/google"
+import { Space_Grotesk, Inter, Manrope } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
 import { LanguageProvider } from "@/contexts/language-context"
 
-const inter = Inter({ subsets: ["latin"] })
+const spaceGrotesk = Space_Grotesk({ 
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: 'swap',
+  preload: true,
+  variable: '--font-space-grotesk'
+})
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  display: 'swap',
+  preload: true,
+  variable: '--font-manrope'
+})
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: 'swap',
+  preload: true,
+  variable: '--font-inter'
+})
 
 export const metadata = {
   title: "Pablo Torres - Digital Marketing Expert",
@@ -75,8 +97,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <meta name="apple-mobile-web-app-title" content="Pablo Torres" />
-      <body className={inter.className}>
+      <head>
+        <meta name="apple-mobile-web-app-title" content="Pablo Torres" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
+      <body className={`${spaceGrotesk.variable} ${manrope.variable} ${inter.variable} font-sans`}>
+        {/* Skip navigation links for keyboard users */}
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 bg-primary text-primary-foreground px-4 py-2 rounded-md">
+          Skip to main content
+        </a>
+        <a href="#navigation" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-48 z-50 bg-primary text-primary-foreground px-4 py-2 rounded-md">
+          Skip to navigation
+        </a>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <LanguageProvider>
             {children}

@@ -1,21 +1,60 @@
 "use client"
 
+<<<<<<< Updated upstream
 import type React from "react"
 
 import Image from "next/image"
+=======
+import React from "react"
+>>>>>>> Stashed changes
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+<<<<<<< Updated upstream
+=======
+import SplitText from "@/components/ui/SplitText"
+import { OptimizedImage } from "@/components/ui/optimized-image"
+>>>>>>> Stashed changes
 import { useLanguage } from "@/contexts/language-context"
 import { translations } from "@/lib/translations"
-import { projects } from "@/data/projects"
+// Removed static import - will fetch from API
 
 // Importar el hook useInView
 import { useInView } from "@/hooks/useInView"
 
 export default function Portfolio() {
   const { language } = useLanguage()
+  const [projects, setProjects] = React.useState<any[]>([])
+  const [loading, setLoading] = React.useState(true)
+  const [error, setError] = React.useState<string | null>(null)
+
+  React.useEffect(() => {
+    fetchProjects()
+  }, [])
+
+  const fetchProjects = async () => {
+    try {
+      const response = await fetch('/api/case-studies')
+      const data = await response.json()
+      
+      if (!response.ok) {
+        setError(language === 'es' ? data.error : data.message)
+        return
+      }
+      
+      setProjects(data.projects || [])
+    } catch (err) {
+      console.error('Error fetching projects:', err)
+      setError(
+        language === 'es' 
+          ? 'Error al cargar los proyectos. Por favor, intenta más tarde.'
+          : 'Error loading projects. Please try again later.'
+      )
+    } finally {
+      setLoading(false)
+    }
+  }
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -63,6 +102,32 @@ export default function Portfolio() {
           </div>
         </motion.div>
 
+        {loading && (
+          <div className="flex items-center justify-center py-12">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+          </div>
+        )}
+
+        {error && (
+          <div className="text-center py-12">
+            <p className="text-red-500 mb-4">{error}</p>
+            <Button onClick={fetchProjects} variant="outline">
+              {language === 'es' ? 'Reintentar' : 'Try Again'}
+            </Button>
+          </div>
+        )}
+
+        {!loading && !error && projects.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-muted-foreground">
+              {language === 'es' 
+                ? 'No hay proyectos disponibles en este momento.'
+                : 'No projects available at this time.'}
+            </p>
+          </div>
+        )}
+
+        {!loading && !error && projects.length > 0 && (
         <Tabs defaultValue="all" className="w-full max-w-5xl mx-auto mt-12">
           <TabsList className="grid w-full grid-cols-2 sm:grid-cols-4 mb-12 bg-background/50 backdrop-blur-sm p-1 rounded-full border">
             <TabsTrigger
@@ -153,14 +218,20 @@ export default function Portfolio() {
             </motion.div>
           </TabsContent>
         </Tabs>
+        )}
       </div>
     </section>
   )
 }
 
 interface ProjectItemProps {
+<<<<<<< Updated upstream
   project: (typeof projects)[0]
   language: string
+=======
+  project: any
+  language: "en" | "es"
+>>>>>>> Stashed changes
   fadeIn: any
 }
 
@@ -177,7 +248,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, language, fadeIn }) 
       whileHover={{ scale: 1.03, y: -5 }}
       transition={{ duration: 0.2 }}
     >
-      <Image
+      <OptimizedImage
         src={project.image || "/placeholder.svg"}
         width={300}
         height={600}
@@ -185,6 +256,8 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project, language, fadeIn }) 
         className={`aspect-[9/16] object-cover object-center transition-transform duration-500 w-full h-full mx-auto ${
           isInView ? "scale-105" : "group-hover:scale-110"
         }`}
+        quality={75}
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
       />
       <div
         className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent transition-all duration-300 flex flex-col items-center justify-end p-6 ${

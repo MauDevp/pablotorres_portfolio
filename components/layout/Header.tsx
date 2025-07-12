@@ -5,7 +5,7 @@ import type React from "react"
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { User, Moon, Sun, Menu } from "lucide-react"
+import { User, Moon, Sun, Menu, Sparkles, Shield } from "lucide-react"
 import Image from "next/image"
 
 import { Button } from "@/components/ui/button"
@@ -16,6 +16,7 @@ import { useLanguage } from "@/contexts/language-context"
 import { translations } from "@/lib/translations"
 import LanguageSwitcher from "@/components/language/LanguageSwitcher"
 import { scrollToSection } from "@/lib/utils"
+import { ariaLabels, KEYBOARD_KEYS } from "@/lib/accessibility"
 
 interface HeaderProps {
   activeSection: string
@@ -49,6 +50,8 @@ export default function Header({ activeSection, darkMode, setDarkMode }: HeaderP
     { id: "contact", label: translations.nav.contact },
   ]
 
+  const iconStyles = "h-6 w-6 text-primary transition-transform transform hover:scale-105"
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault()
     scrollToSection(sectionId)
@@ -57,13 +60,16 @@ export default function Header({ activeSection, darkMode, setDarkMode }: HeaderP
 
   return (
     <header
+      role="banner"
+      aria-label={ariaLabels.regions.header}
       className={`sticky top-0 z-50 w-full transition-all duration-200 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b shadow-sm"
+          ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b shadow-lg"
           : "bg-background"
       }`}
     >
-      <div className="container flex h-16 items-center justify-between">
+
+      <div className="container flex h-16 items-center justify-between relative">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -72,17 +78,20 @@ export default function Header({ activeSection, darkMode, setDarkMode }: HeaderP
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <Image
-            src={darkMode ? "/Logo_name_white.png" : "/Logo_name.png"}
-            width={120}
-            height={120}
-            alt="Profile"
-            className="w-20 h-auto"
-          />
+          <a href="/" aria-label="Pablo Torres - Home">
+            <Image
+              src={darkMode ? "/Logo_name_white.png" : "/Logo_name.png"}
+              width={120}
+              height={120}
+              alt="Pablo Torres logo"
+              className="w-20 h-auto"
+              priority
+            />
+          </a>
         </motion.div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-4 lg:gap-8">
+        <nav className="hidden md:flex items-center gap-4 lg:gap-8" aria-label={ariaLabels.navigation.main}>
           {navItems.map((item, index) => (
             <motion.div
               key={item.id}
@@ -115,9 +124,16 @@ export default function Header({ activeSection, darkMode, setDarkMode }: HeaderP
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button variant="outline" size="icon" onClick={() => setDarkMode(!darkMode)} className="mr-2">
+                <Button 
+                  variant="outline" 
+                  size="icon" 
+                  onClick={() => setDarkMode(!darkMode)} 
+                  className="mr-2"
+                  aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+                  aria-pressed={darkMode}
+                >
                   {darkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-                  <span className="sr-only">Toggle theme</span>
+                  <span className="sr-only">{ariaLabels.buttons.darkMode}</span>
                 </Button>
               </TooltipTrigger>
               <TooltipContent>
@@ -133,9 +149,16 @@ export default function Header({ activeSection, darkMode, setDarkMode }: HeaderP
           {/* Mobile Menu */}
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden">
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="md:hidden"
+                aria-label={ariaLabels.buttons.menu}
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-navigation"
+              >
                 <Menu className="h-6 w-6" />
-                <span className="sr-only">Toggle menu</span>
+                <span className="sr-only">{ariaLabels.buttons.menu}</span>
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[80vw] sm:w-[350px] border-l-primary/20 fixed">
@@ -147,7 +170,7 @@ export default function Header({ activeSection, darkMode, setDarkMode }: HeaderP
                   </div>
                 </div>
 
-                <nav className="flex flex-col gap-6">
+                <nav className="flex flex-col gap-6" id="mobile-navigation" aria-label={ariaLabels.navigation.mobile}>
                   {navItems.map((item) => (
                     <Link
                       key={item.id}

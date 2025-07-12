@@ -40,12 +40,12 @@ export const translations = {
   // Hero Section
   hero: {
     title: {
-      en: "Transforming Digital Presence",
-      es: "Transformando la Presencia Digital",
+      en: "AI-Powered Digital Marketing Expert",
+      es: "Experto en Marketing Digital Potenciado por IA",
     },
     subtitle: {
-      en: "Driving measurable growth through data-driven strategies and AI-powered insights that elevate brands and maximize ROI.",
-      es: "Impulsando un crecimiento medible a través de estrategias basadas en datos e insights potenciados por IA que elevan marcas y maximizan el ROI.",
+      en: "Leveraging artificial intelligence and advanced analytics to create hyper-personalized campaigns that drive 3x better results. Transforming data into growth strategies that outperform traditional marketing.",
+      es: "Aprovechando la inteligencia artificial y análisis avanzados para crear campañas hiperpersonalizadas que generan 3x mejores resultados. Transformando datos en estrategias de crecimiento que superan al marketing tradicional.",
     },
     cta: {
       en: "Start Your Transformation",
@@ -68,8 +68,8 @@ export const translations = {
       es: "Sobre Mí",
     },
     description: {
-      en: "Digital Marketing Specialist and Marketing Strategist with 5 years of experience in creating and executing comprehensive digital strategies. Expert in SEO, SEM, social media management, data analysis, and media planning. Skilled in strategic planning, milestone scheduling, and campaign optimization across various digital channels. Proven ability to maximize ROI and KPIs, designing effective strategies aligned with business objectives.",
-      es: "Especialista en Marketing Digital y Estratega de Marketing con 5 años de experiencia en la creación y ejecución de estrategias digitales integrales. Experto en SEO, SEM, gestión de redes sociales, análisis de datos y creación de planes de medios. Hábil en la planificación estratégica, calendarización de hitos, y optimización de campañas a través de diversos canales digitales. Comprobada capacidad para maximizar el ROI y KPI, diseñando estrategias efectivas alineadas con objetivos comerciales.",
+      en: "AI-Driven Digital Marketing Strategist with 5+ years of experience leveraging artificial intelligence to revolutionize marketing campaigns. Specialized in predictive analytics, machine learning for customer segmentation, AI-powered content optimization, and automated personalization at scale. Master's in Digital Marketing & AI from INESDI Madrid. Expert in combining traditional marketing expertise with cutting-edge AI tools like ChatGPT, Claude, Midjourney, and advanced analytics platforms. Proven track record of achieving 300%+ ROI improvements through AI-enhanced strategies, with results including 15,000+ follower growth, 75% engagement increases, and 3x conversion rate optimization.",
+      es: "Estratega de Marketing Digital impulsado por IA con más de 5 años de experiencia aprovechando la inteligencia artificial para revolucionar campañas de marketing. Especializado en análisis predictivo, machine learning para segmentación de clientes, optimización de contenido potenciada por IA y personalización automatizada a escala. Máster en Marketing Digital e IA por INESDI Madrid. Experto en combinar experiencia tradicional en marketing con herramientas de IA de vanguardia como ChatGPT, Claude, Midjourney y plataformas de análisis avanzadas. Historial comprobado de lograr mejoras de ROI del 300%+ mediante estrategias mejoradas con IA, con resultados que incluyen crecimiento de 15,000+ seguidores, aumentos del 75% en engagement y optimización 3x en tasas de conversión.",
     },
     location: {
       en: "Zapopan, Jalisco",
@@ -252,62 +252,62 @@ export const translations = {
     items: [
       {
         title: {
-          en: "Data-Driven SEO",
-          es: "SEO Basado en Datos",
+          en: "AI-Powered Predictive Analytics",
+          es: "Analítica Predictiva con IA",
         },
         description: {
-          en: "Boost your search rankings with advanced SEO strategies powered by AI analytics and competitive insights.",
-          es: "Mejora tu posicionamiento en buscadores con estrategias SEO avanzadas potenciadas por análisis de IA e insights competitivos.",
+          en: "Forecast customer behavior and market trends using machine learning algorithms. Predict campaign performance with 90%+ accuracy and optimize budget allocation in real-time.",
+          es: "Predice el comportamiento del cliente y tendencias del mercado usando algoritmos de machine learning. Anticipa el rendimiento de campañas con 90%+ de precisión y optimiza la asignación de presupuesto en tiempo real.",
         },
       },
       {
         title: {
-          en: "Performance Analytics",
-          es: "Analítica de Rendimiento",
+          en: "Hyper-Personalization at Scale",
+          es: "Hiperpersonalización a Escala",
         },
         description: {
-          en: "Transform raw data into actionable insights with comprehensive analytics and AI-powered performance tracking.",
-          es: "Transforma datos brutos en insights accionables con análisis completos y seguimiento de rendimiento potenciado por IA.",
+          en: "Create 1-to-1 customer experiences using AI to analyze behavior patterns, preferences, and purchase history. Deliver personalized content to millions simultaneously.",
+          es: "Crea experiencias 1 a 1 con clientes usando IA para analizar patrones de comportamiento, preferencias e historial de compras. Entrega contenido personalizado a millones simultáneamente.",
         },
       },
       {
         title: {
-          en: "Strategic Social Media",
-          es: "Redes Sociales Estratégicas",
+          en: "AI Content Generation & Optimization",
+          es: "Generación y Optimización de Contenido con IA",
         },
         description: {
-          en: "Captivate your audience with targeted social campaigns optimized by AI for maximum engagement and conversion.",
-          es: "Cautiva a tu audiencia con campañas sociales dirigidas y optimizadas por IA para máximo engagement y conversión.",
+          en: "Leverage GPT-4, Claude, and custom AI models to create high-converting copy. A/B test thousands of variations automatically and optimize in real-time.",
+          es: "Aprovecha GPT-4, Claude y modelos de IA personalizados para crear copy de alta conversión. Prueba A/B miles de variaciones automáticamente y optimiza en tiempo real.",
         },
       },
       {
         title: {
-          en: "Conversion-Focused Content",
-          es: "Contenido Enfocado a Conversiones",
+          en: "Intelligent Marketing Automation",
+          es: "Automatización de Marketing Inteligente",
         },
         description: {
-          en: "Create compelling, strategic content that resonates with your audience and drives measurable business results.",
-          es: "Crea contenido estratégico y convincente que resuene con tu audiencia y genere resultados comerciales medibles.",
+          en: "Build sophisticated marketing funnels that adapt to user behavior. AI chatbots, dynamic email sequences, and smart retargeting that converts 3x better.",
+          es: "Construye embudos de marketing sofisticados que se adaptan al comportamiento del usuario. Chatbots de IA, secuencias de email dinámicas y retargeting inteligente que convierte 3x mejor.",
         },
       },
       {
         title: {
-          en: "AI-Powered Automation",
-          es: "Automatización con IA",
+          en: "Advanced Customer Segmentation",
+          es: "Segmentación Avanzada de Clientes",
         },
         description: {
-          en: "Implement intelligent chatbots and marketing automation to enhance customer experience and generate leads 24/7.",
-          es: "Implementa chatbots inteligentes y automatización de marketing para mejorar la experiencia del cliente y generar leads 24/7.",
+          en: "Use machine learning to identify micro-segments and hidden patterns in your audience. Create laser-targeted campaigns that speak directly to each segment's needs.",
+          es: "Usa machine learning para identificar micro-segmentos y patrones ocultos en tu audiencia. Crea campañas ultra-dirigidas que hablan directamente a las necesidades de cada segmento.",
         },
       },
       {
         title: {
-          en: "Personalized Email Campaigns",
-          es: "Campañas de Email Personalizadas",
+          en: "AI-Enhanced Media Planning",
+          es: "Planificación de Medios Mejorada con IA",
         },
         description: {
-          en: "Deliver high-converting email campaigns with AI-driven segmentation, personalization, and optimization.",
-          es: "Entrega campañas de email de alta conversión con segmentación, personalización y optimización impulsadas por IA.",
+          en: "Optimize media spend across channels using AI algorithms. Predict optimal budget distribution, best performing creatives, and ideal posting times with data-driven precision.",
+          es: "Optimiza el gasto en medios entre canales usando algoritmos de IA. Predice la distribución óptima del presupuesto, los creativos de mejor rendimiento y los horarios ideales de publicación con precisión basada en datos.",
         },
       },
     ],
@@ -322,62 +322,62 @@ export const translations = {
     categories: [
       {
         name: {
-          en: "Digital Marketing & Advertising",
-          es: "Marketing Digital y Publicidad",
+          en: "AI & Machine Learning for Marketing",
+          es: "IA y Machine Learning para Marketing",
         },
         skills: {
-          en: "SEO advanced, SEM, Google Ads, Meta Ads, TikTok Ads, dynamic retargeting, programmatic advertising, LinkedIn Ads",
-          es: "SEO avanzado, SEM, Google Ads, Meta Ads, TikTok Ads, retargeting dinámico, publicidad programática, LinkedIn Ads",
+          en: "ChatGPT, Claude, Gemini, Midjourney, DALL-E 3, Stable Diffusion, Python for marketing analytics, TensorFlow, predictive modeling, sentiment analysis, NLP for content optimization",
+          es: "ChatGPT, Claude, Gemini, Midjourney, DALL-E 3, Stable Diffusion, Python para análisis de marketing, TensorFlow, modelado predictivo, análisis de sentimientos, NLP para optimización de contenido",
         },
       },
       {
         name: {
-          en: "Strategy & Planning",
-          es: "Estrategia y Planificación",
+          en: "Advanced Digital Marketing",
+          es: "Marketing Digital Avanzado",
         },
         skills: {
-          en: "Creation and optimization of multichannel media plans, design of sales funnels to maximize conversions at each stage of the customer journey, market analysis and segmentation strategies",
-          es: "Creación y optimización de planes de medios multicanal, diseño de funnels de ventas para maximizar conversiones en cada etapa del customer journey, análisis de mercado y estrategias de segmentación",
+          en: "AI-powered SEO, programmatic advertising with AI optimization, Meta Ads with Advantage+ AI, Google Performance Max, TikTok Smart Performance Campaigns, dynamic creative optimization (DCO)",
+          es: "SEO potenciado por IA, publicidad programática con optimización de IA, Meta Ads con Advantage+ AI, Google Performance Max, TikTok Smart Performance Campaigns, optimización dinámica de creativos (DCO)",
         },
       },
       {
         name: {
-          en: "Analytics & Data Strategy",
-          es: "Analítica y Estrategia de Datos",
+          en: "Data Science & Analytics",
+          es: "Ciencia de Datos y Analítica",
         },
         skills: {
-          en: "Google Analytics 4, Data Studio, Tag Manager, KPI and ROI interpretation, custom dashboards",
-          es: "Google Analytics 4, Data Studio, Tag Manager, interpretación de KPI y ROI, dashboards personalizados",
+          en: "Google Analytics 4 with AI insights, BigQuery, Looker Studio, Power BI, Tableau, Python (pandas, scikit-learn), R for statistical analysis, predictive analytics, cohort analysis, LTV modeling",
+          es: "Google Analytics 4 con insights de IA, BigQuery, Looker Studio, Power BI, Tableau, Python (pandas, scikit-learn), R para análisis estadístico, analítica predictiva, análisis de cohortes, modelado LTV",
         },
       },
       {
         name: {
-          en: "Content Management & Social Media",
-          es: "Gestión de Contenidos y Redes Sociales",
+          en: "Marketing Automation & AI Tools",
+          es: "Automatización de Marketing y Herramientas IA",
         },
         skills: {
-          en: "Editorial calendars, persuasive copywriting, Hootsuite, campaign management and UGC (User-Generated Content)",
-          es: "Calendarios editoriales, copywriting persuasivo, Hootsuite, gestión de campañas y UGC (User-Generated Content)",
+          en: "HubSpot with AI features, Salesforce Einstein, Adobe Sensei, Marketo AI, Zapier, Make (Integromat), custom chatbot development, conversational AI, marketing workflow automation",
+          es: "HubSpot con funciones de IA, Salesforce Einstein, Adobe Sensei, Marketo AI, Zapier, Make (Integromat), desarrollo de chatbots personalizados, IA conversacional, automatización de flujos de marketing",
         },
       },
       {
         name: {
-          en: "Automation Tools & CRM",
-          es: "Herramientas de Automatización y CRM",
+          en: "Content Creation & AI Design",
+          es: "Creación de Contenido y Diseño con IA",
         },
         skills: {
-          en: "HubSpot, Salesforce Marketing Cloud, Marketo, workflow automation, advanced email marketing",
-          es: "HubSpot, Salesforce Marketing Cloud, Marketo, automatización de flujos de trabajo, email marketing avanzado",
+          en: "AI copywriting (Jasper, Copy.ai), Canva Magic Studio, Adobe Firefly, Runway ML, video generation AI, automated A/B testing, dynamic content personalization, AI-powered content calendars",
+          es: "Copywriting con IA (Jasper, Copy.ai), Canva Magic Studio, Adobe Firefly, Runway ML, IA de generación de video, pruebas A/B automatizadas, personalización dinámica de contenido, calendarios de contenido con IA",
         },
       },
       {
         name: {
-          en: "Graphic Design & Content Production",
-          es: "Diseño Gráfico y Producción de Contenidos",
+          en: "Strategic Planning & Innovation",
+          es: "Planificación Estratégica e Innovación",
         },
         skills: {
-          en: "Photoshop, Illustrator, Canva, Premiere, After Effects, Cap Cut, WordPress",
-          es: "Photoshop, Illustrator, Canva, Premiere, After Effects, Cap Cut, WordPress",
+          en: "AI-driven market research, competitive intelligence with AI, predictive trend analysis, customer journey mapping with ML, attribution modeling, media mix modeling (MMM), growth hacking with AI",
+          es: "Investigación de mercado con IA, inteligencia competitiva con IA, análisis predictivo de tendencias, mapeo del customer journey con ML, modelado de atribución, modelado de media mix (MMM), growth hacking con IA",
         },
       },
     ],
@@ -386,12 +386,12 @@ export const translations = {
   // Portfolio Section
   portfolio: {
     title: {
-      en: "Results That Speak",
-      es: "Resultados que Hablan",
+      en: "AI-Driven Success Stories",
+      es: "Casos de Éxito Impulsados por IA",
     },
     subtitle: {
-      en: "Discover how my strategic approach has transformed brands and delivered exceptional ROI",
-      es: "Descubre cómo mi enfoque estratégico ha transformado marcas y entregado un ROI excepcional",
+      en: "Real results from AI-enhanced marketing strategies: 300%+ ROI improvements, 15K+ follower growth, and 3x conversion optimization",
+      es: "Resultados reales de estrategias de marketing mejoradas con IA: mejoras de ROI del 300%+, crecimiento de 15K+ seguidores y optimización 3x en conversiones",
     },
     tabs: {
       all: {
