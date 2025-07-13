@@ -5,16 +5,41 @@ import { useState, useEffect } from "react";
 import { LanguageProvider } from "@/contexts/language-context";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 
+import dynamic from 'next/dynamic';
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
-import About from "@/components/sections/About";
-import Experience from "@/components/sections/Experience";
-import Services from "@/components/sections/Services";
-import Skills from "@/components/sections/Skills";
-import Portfolio from "@/components/sections/Portfolio";
-import Testimonials from "@/components/sections/Testimonials";
-import Contact from "@/components/sections/Contact";
+
+import SectionLoading from '@/components/ui/section-loading';
+
+const About = dynamic(() => import('@/components/sections/About'), { 
+  ssr: false, 
+  loading: () => <SectionLoading title="About" /> 
+});
+const Experience = dynamic(() => import('@/components/sections/Experience'), { 
+  ssr: false, 
+  loading: () => <SectionLoading title="Experience" /> 
+});
+const Services = dynamic(() => import('@/components/sections/Services'), { 
+  ssr: false, 
+  loading: () => <SectionLoading title="Services" /> 
+});
+const Skills = dynamic(() => import('@/components/sections/Skills'), { 
+  ssr: false, 
+  loading: () => <SectionLoading title="Skills" /> 
+});
+const Portfolio = dynamic(() => import('@/components/sections/Portfolio'), { 
+  ssr: false, 
+  loading: () => <SectionLoading title="Portfolio" /> 
+});
+const Testimonials = dynamic(() => import('@/components/sections/Testimonials'), { 
+  ssr: false, 
+  loading: () => <SectionLoading title="Testimonials" /> 
+});
+const Contact = dynamic(() => import('@/components/sections/Contact'), { 
+  ssr: false, 
+  loading: () => <SectionLoading title="Contact" /> 
+});
 
 // Main content component
 function MainContent() {
