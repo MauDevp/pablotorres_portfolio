@@ -32,8 +32,7 @@ export function getNotionImageUrl(originalUrl: string): string {
  * Check if a URL is a Notion image URL that needs proxying
  */
 export function isNotionImageUrl(url: string): boolean {
-  return url && (
-    url.includes('prod-files-secure.s3.us-west-2.amazonaws.com') ||
+  return url?.includes('prod-files-secure.s3.us-west-2.amazonaws.com') ||
     url.includes('s3.us-west-2.amazonaws.com') ||
     url.includes('amazonaws.com')
   );
