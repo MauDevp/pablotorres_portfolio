@@ -1,18 +1,19 @@
 import { NextResponse } from 'next/server';
 import { fetchCaseStudyBySlug } from '@/lib/notion';
 import { projects as staticProjects } from '@/data/projects';
+import type { Project } from '@/data/projects';
 
 export const dynamic = 'force-dynamic';
 
 export async function GET(
   request: Request,
-  { params }: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
+  const { slug } = await params;
+
   try {
-    const { slug } = params;
-    
     // Intentar obtener proyecto de Notion
-    let project = await fetchCaseStudyBySlug(slug);
+    let project: Project | null = await fetchCaseStudyBySlug(slug);
     
     if (project) {
       console.log('✅ Usando proyecto de Notion:', slug);
@@ -21,7 +22,7 @@ export async function GET(
     
     // Fallback a proyectos estáticos
     console.log('⚠️  Notion no disponible, buscando en proyectos estáticos:', slug);
-    project = staticProjects.find(p => p.slug === slug);
+    project = staticProjects.find(p => p.slug === slug) ?? null;
     
     if (project) {
       console.log('✅ Proyecto encontrado en estáticos:', slug);
@@ -41,11 +42,11 @@ export async function GET(
     console.error('API Error:', error);
     
     // Fallback a proyectos estáticos en caso de error
-    console.log('⚠️  Error en Notion, buscando en proyectos estáticos:', params.slug);
-    const project = staticProjects.find(p => p.slug === params.slug);
+    console.log('⚠️  Error en Notion, buscando en proyectos estáticos:', slug);
+    const project = staticProjects.find(p => p.slug === slug);
     
     if (project) {
-      console.log('✅ Proyecto encontrado en estáticos (fallback):', params.slug);
+      console.log('✅ Proyecto encontrado en estáticos (fallback):', slug);
       return NextResponse.json({ project });
     }
     

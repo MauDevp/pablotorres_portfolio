@@ -1,8 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
-
-import { LanguageProvider } from "@/contexts/language-context";
 import { useScrollSpy } from "@/hooks/useScrollSpy";
 
 import dynamic from 'next/dynamic';
@@ -41,37 +38,24 @@ const Contact = dynamic(() => import('@/components/sections/Contact'), {
   loading: () => <SectionLoading title="Contact" /> 
 });
 
+const SECTION_IDS = [
+  "home",
+  "about",
+  "experience",
+  "services",
+  "skills",
+  "portfolio",
+  "testimonials",
+  "contact",
+];
+
 // Main content component
 function MainContent() {
-  const [darkMode, setDarkMode] = useState(false);
-  const sectionIds = [
-    "home",
-    "about",
-    "experience",
-    "services",
-    "skills",
-    "portfolio",
-    "testimonials",
-    "contact",
-  ];
-  const activeSection = useScrollSpy(sectionIds);
-
-  // Toggle dark mode
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [darkMode]);
+  const activeSection = useScrollSpy(SECTION_IDS);
 
   return (
     <div className="flex min-h-screen flex-col">
-      <Header
-        activeSection={activeSection}
-        darkMode={darkMode}
-        setDarkMode={setDarkMode}
-      />
+      <Header activeSection={activeSection} />
       <main className="flex-1">
         <Hero />
         <About />
@@ -80,22 +64,14 @@ function MainContent() {
         <Skills />
         <Portfolio />
         <Testimonials />
-        <Contact
-          activeSection={activeSection}
-          darkMode={darkMode}
-          setDarkMode={setDarkMode}
-        />
+        <Contact />
       </main>
       <Footer />
     </div>
   );
 }
 
-// Wrap the main content with the language provider
+// LanguageProvider is already in layout.tsx — no need to duplicate here
 export default function Home() {
-  return (
-    <LanguageProvider>
-      <MainContent />
-    </LanguageProvider>
-  );
+  return <MainContent />;
 }

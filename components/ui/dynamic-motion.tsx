@@ -1,32 +1,12 @@
 "use client"
 
 import dynamic from 'next/dynamic'
-import { ComponentProps } from 'react'
-
-// Loading fallback for motion components
-const MotionLoading = ({ 
-  className, 
-  children, 
-  style 
-}: { 
-  className?: string; 
-  children?: React.ReactNode; 
-  style?: React.CSSProperties;
-}) => (
-  <div className={className} style={style}>
-    {children}
-  </div>
-)
+import type { ComponentProps } from 'react'
 
 // Dynamically import framer-motion components
 export const DynamicMotionDiv = dynamic(
   () => import('framer-motion').then(mod => ({ default: mod.motion.div })),
   {
-    loading: ({ className, children, style }) => (
-      <MotionLoading className={className} style={style}>
-        {children}
-      </MotionLoading>
-    ),
     ssr: false
   }
 )
@@ -34,11 +14,6 @@ export const DynamicMotionDiv = dynamic(
 export const DynamicMotionSection = dynamic(
   () => import('framer-motion').then(mod => ({ default: mod.motion.section })),
   {
-    loading: ({ className, children, style }) => (
-      <section className={className} style={style}>
-        {children}
-      </section>
-    ),
     ssr: false
   }
 )
@@ -46,11 +21,6 @@ export const DynamicMotionSection = dynamic(
 export const DynamicMotionSpan = dynamic(
   () => import('framer-motion').then(mod => ({ default: mod.motion.span })),
   {
-    loading: ({ className, children, style }) => (
-      <span className={className} style={style}>
-        {children}
-      </span>
-    ),
     ssr: false
   }
 )
@@ -58,11 +28,6 @@ export const DynamicMotionSpan = dynamic(
 export const DynamicMotionH1 = dynamic(
   () => import('framer-motion').then(mod => ({ default: mod.motion.h1 })),
   {
-    loading: ({ className, children, style }) => (
-      <h1 className={className} style={style}>
-        {children}
-      </h1>
-    ),
     ssr: false
   }
 )
@@ -70,11 +35,6 @@ export const DynamicMotionH1 = dynamic(
 export const DynamicMotionH2 = dynamic(
   () => import('framer-motion').then(mod => ({ default: mod.motion.h2 })),
   {
-    loading: ({ className, children, style }) => (
-      <h2 className={className} style={style}>
-        {children}
-      </h2>
-    ),
     ssr: false
   }
 )
@@ -82,11 +42,6 @@ export const DynamicMotionH2 = dynamic(
 export const DynamicMotionH3 = dynamic(
   () => import('framer-motion').then(mod => ({ default: mod.motion.h3 })),
   {
-    loading: ({ className, children, style }) => (
-      <h3 className={className} style={style}>
-        {children}
-      </h3>
-    ),
     ssr: false
   }
 )
@@ -94,11 +49,6 @@ export const DynamicMotionH3 = dynamic(
 export const DynamicMotionP = dynamic(
   () => import('framer-motion').then(mod => ({ default: mod.motion.p })),
   {
-    loading: ({ className, children, style }) => (
-      <p className={className} style={style}>
-        {children}
-      </p>
-    ),
     ssr: false
   }
 )
@@ -106,11 +56,6 @@ export const DynamicMotionP = dynamic(
 export const DynamicMotionA = dynamic(
   () => import('framer-motion').then(mod => ({ default: mod.motion.a })),
   {
-    loading: ({ className, children, style }) => (
-      <a className={className} style={style}>
-        {children}
-      </a>
-    ),
     ssr: false
   }
 )
@@ -118,11 +63,6 @@ export const DynamicMotionA = dynamic(
 export const DynamicMotionButton = dynamic(
   () => import('framer-motion').then(mod => ({ default: mod.motion.button })),
   {
-    loading: ({ className, children, style }) => (
-      <button className={className} style={style}>
-        {children}
-      </button>
-    ),
     ssr: false
   }
 )
@@ -130,9 +70,6 @@ export const DynamicMotionButton = dynamic(
 export const DynamicMotionImg = dynamic(
   () => import('framer-motion').then(mod => ({ default: mod.motion.img })),
   {
-    loading: ({ className, style, alt }) => (
-      <img className={className} style={style} alt={alt} />
-    ),
     ssr: false
   }
 )

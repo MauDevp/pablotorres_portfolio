@@ -118,7 +118,7 @@ interface ServiceItemProps {
   service: any
   language: string
   fadeIn: any
-  renderIcon: (iconName: string) => JSX.Element
+  renderIcon: (iconName: string) => React.ReactElement
   handleLearnMore: (serviceTitle: string) => void
 }
 
@@ -157,4 +157,3 @@ const ServiceItem: React.FC<ServiceItemProps> = ({ service, language, fadeIn, re
     </motion.div>
   )
 }
-
