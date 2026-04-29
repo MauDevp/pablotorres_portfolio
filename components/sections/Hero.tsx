@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { ArrowRight, Download, TrendingUp, Users, Star } from "lucide-react"
@@ -27,6 +28,7 @@ const metrics = [
 
 export default function Hero() {
   const { language } = useLanguage()
+  const [isProfileHovered, setIsProfileHovered] = useState(false)
 
   return (
     <section
@@ -175,15 +177,26 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="relative" style={{ width: "100%", maxWidth: "520px", height: "560px" }}>
+            <div
+              className="relative"
+              style={{ width: "100%", maxWidth: "520px", height: "560px" }}
+              onMouseEnter={() => setIsProfileHovered(true)}
+              onMouseLeave={() => setIsProfileHovered(false)}
+              onFocus={() => setIsProfileHovered(true)}
+              onBlur={() => setIsProfileHovered(false)}
+            >
               {/* Violet glow ring behind orb */}
-              <div className="absolute inset-8 rounded-full bg-gradient-to-br from-violet-500/25 to-pink-500/15 blur-3xl" />
+              <div
+                className={`absolute inset-8 rounded-full bg-gradient-to-br from-violet-500/25 to-pink-500/15 blur-3xl transition-all duration-500 ${
+                  isProfileHovered ? "scale-110 opacity-100" : "scale-100 opacity-75"
+                }`}
+              />
 
               {/* Orb */}
-              <Orb hoverIntensity={0.5} rotateOnHover={true} hue={260} forceHoverState={false} />
+              <Orb hoverIntensity={0.5} rotateOnHover={true} hue={260} forceHoverState={isProfileHovered} />
 
               {/* Profile image */}
-              <div className="absolute inset-0 flex items-center justify-center z-10" style={{ transform: "translateY(-16px)" }}>
+              <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none" style={{ transform: "translateY(-16px)" }}>
                 <Image
                   src="/profile/Pablo_perfil_3.png"
                   width={360}
