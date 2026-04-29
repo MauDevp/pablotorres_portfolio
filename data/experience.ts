@@ -22,6 +22,60 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     company: {
+      en: "Las Palmas Bar & Restaurant / District Night Club",
+      es: "Las Palmas Bar & Restaurant / District Night Club",
+    },
+    title: {
+      en: "Digital Marketing Consultant",
+      es: "Consultor de Marketing Digital",
+    },
+    period: {
+      en: "2025 - 2026",
+      es: "2025 - 2026",
+    },
+    responsibilities: {
+      en: [
+        "Contributed to strategic decision-making initiatives focused on increasing customer retention and maximizing venue occupancy in the U.S. market.",
+        "Designed and implemented a loyalty program for Las Palmas, generating a 40% increase in customer traffic and revitalizing weekday attendance.",
+        "Led targeted promotional strategies and influencer marketing initiatives to strengthen brand visibility and positioning for both venues.",
+      ],
+      es: [
+        "Contribuí en iniciativas de decisión estratégica enfocadas en aumentar la retención de clientes y maximizar la ocupación de los venues en el mercado de Estados Unidos.",
+        "Diseñé e implementé un programa de lealtad para Las Palmas, logrando un incremento del 40% en tráfico de clientes y reactivando la asistencia entre semana.",
+        "Lideré estrategias promocionales e iniciativas de influencer marketing para fortalecer la visibilidad y posicionamiento de ambas marcas.",
+      ],
+    },
+  },
+  {
+    company: {
+      en: "Nimbus Agency",
+      es: "Nimbus Agency",
+    },
+    title: {
+      en: "Content Strategist & Creative Production Coordinator",
+      es: "Estratega de Contenido y Coordinador de Producción Creativa",
+    },
+    period: {
+      en: "February 2024 - December 2024",
+      es: "Febrero 2024 - Diciembre 2024",
+    },
+    responsibilities: {
+      en: [
+        "Developed creative moodboards to guide the visual direction and storytelling approach for reels aligned with each client's marketing objectives.",
+        "Directed and oversaw content shoots to ensure visual assets followed a coherent creative vision and emotional narrative.",
+        "Tracked and analyzed campaign performance metrics on Meta Ads and TikTok Business, delivering reports to optimize reach, engagement, and conversion KPIs.",
+        "Managed client-specific production agendas to ensure timely execution and consistent creative output.",
+      ],
+      es: [
+        "Desarrollé moodboards creativos para guiar la dirección visual y narrativa de reels alineados con los objetivos de marketing de cada cliente.",
+        "Dirigí y supervisé sesiones de producción de contenido para asegurar piezas visuales con una visión creativa coherente y narrativa emocional.",
+        "Analicé métricas de campañas en Meta Ads y TikTok Business, entregando reportes para optimizar alcance, engagement y conversiones.",
+        "Gestioné agendas de producción por cliente para asegurar ejecución puntual y consistencia creativa.",
+      ],
+    },
+  },
+  {
+    company: {
       en: "Urban Vibes Madrid", // Nombre de la empresa (inglés)
       es: "Urban Vibes Madrid", // Nombre de la empresa (español)
     },
@@ -131,11 +185,9 @@ export const experiences: Experience[] = [
       es: [
         "Gestión de redes sociales (Facebook e Instagram) para aumentar el alcance y la interacción con el público objetivo, logrando un incremento del engagement del 25%.",
         "Creación de contenido visual y publicitario, incluyendo diseños gráficos y videos promocionales, para destacar los eventos semanales y las promociones del lugar.",
-        "Planificación y  para destacar los eventos semanales y las promociones del lugar.",
         "Planificación y calendarización de publicaciones estratégicas alineadas con campañas publicitarias, maximizando la asistencia a los eventos.",
         "Implementación de estrategias de publicidad digital para atraer nuevos clientes y fidelizar la audiencia existente.",
       ],
     },
   },
 ]
-

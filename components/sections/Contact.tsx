@@ -11,7 +11,7 @@ import { useLanguage } from "@/contexts/language-context"
 import { translations } from "@/lib/translations"
 
 const inputClass =
-  "flex w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:ring-2 focus:ring-violet-500/60 focus:border-violet-500/40 transition-all duration-200 backdrop-blur-sm"
+  "flex w-full rounded-xl border border-black/10 bg-white/85 px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-violet-500/60 focus:border-violet-500/40 transition-all duration-200 backdrop-blur-sm dark:border-white/10 dark:bg-white/5 dark:placeholder:text-muted-foreground/60"
 
 export default function Contact() {
   const { language } = useLanguage()
@@ -38,10 +38,10 @@ export default function Contact() {
   }
 
   const infoItems = [
-    { icon: Mail,     href: `mailto:${translations.contact.info.email[language]}`,   label: translations.contact.info.email[language],        color: "text-violet-400", bg: "from-violet-500/20 to-pink-500/10" },
-    { icon: Phone,    href: `tel:${translations.contact.info.phone[language]}`,       label: translations.contact.info.phone[language],         color: "text-pink-400",   bg: "from-pink-500/20 to-amber-500/10" },
-    { icon: MapPin,   href: undefined,                                                 label: translations.contact.info.location[language],      color: "text-amber-400",  bg: "from-amber-500/20 to-orange-500/10" },
-    { icon: Calendar, href: undefined,                                                 label: translations.contact.info.availability[language],  color: "text-emerald-400",bg: "from-emerald-500/20 to-teal-500/10" },
+    { icon: Mail,     href: `mailto:${translations.contact.info.email[language]}`,   label: translations.contact.info.email[language],        color: "text-violet-700 dark:text-violet-400", bg: "from-violet-500/20 to-pink-500/10" },
+    { icon: Phone,    href: `tel:${translations.contact.info.phone[language]}`,       label: translations.contact.info.phone[language],         color: "text-pink-700 dark:text-pink-400",   bg: "from-pink-500/20 to-amber-500/10" },
+    { icon: MapPin,   href: undefined,                                                 label: translations.contact.info.location[language],      color: "text-amber-700 dark:text-amber-400",  bg: "from-amber-500/20 to-orange-500/10" },
+    { icon: Calendar, href: undefined,                                                 label: translations.contact.info.availability[language],  color: "text-emerald-700 dark:text-emerald-400",bg: "from-emerald-500/20 to-teal-500/10" },
   ]
 
   return (

@@ -40,12 +40,12 @@ export const translations = {
   // Hero Section
   hero: {
     title: {
-      en: "AI-Powered Digital Marketing Expert",
-      es: "Experto en Marketing Digital Potenciado por IA",
+      en: "Digital Marketing Specialist & Strategist",
+      es: "Especialista y Estratega de Marketing Digital",
     },
     subtitle: {
-      en: "Leveraging artificial intelligence and advanced analytics to create hyper-personalized campaigns that drive 3x better results. Transforming data into growth strategies that outperform traditional marketing.",
-      es: "Aprovechando la inteligencia artificial y análisis avanzados para crear campañas hiperpersonalizadas que generan 3x mejores resultados. Transformando datos en estrategias de crecimiento que superan al marketing tradicional.",
+      en: "Building comprehensive digital strategies across SEO, SEM, social media, content production, analytics, and media planning to maximize ROI and business growth.",
+      es: "Construyendo estrategias digitales integrales en SEO, SEM, redes sociales, producción de contenido, analítica y planificación de medios para maximizar ROI y crecimiento de negocio.",
     },
     cta: {
       en: "Start Your Transformation",
@@ -68,8 +68,8 @@ export const translations = {
       es: "Sobre Mí",
     },
     description: {
-      en: "AI-Driven Digital Marketing Strategist with 5+ years of experience leveraging artificial intelligence to revolutionize marketing campaigns. Specialized in predictive analytics, machine learning for customer segmentation, AI-powered content optimization, and automated personalization at scale. Master's in Digital Marketing & AI from INESDI Madrid. Expert in combining traditional marketing expertise with cutting-edge AI tools like ChatGPT, Claude, Midjourney, and advanced analytics platforms. Proven track record of achieving 300%+ ROI improvements through AI-enhanced strategies, with results including 15,000+ follower growth, 75% engagement increases, and 3x conversion rate optimization.",
-      es: "Estratega de Marketing Digital impulsado por IA con más de 5 años de experiencia aprovechando la inteligencia artificial para revolucionar campañas de marketing. Especializado en análisis predictivo, machine learning para segmentación de clientes, optimización de contenido potenciada por IA y personalización automatizada a escala. Máster en Marketing Digital e IA por INESDI Madrid. Experto en combinar experiencia tradicional en marketing con herramientas de IA de vanguardia como ChatGPT, Claude, Midjourney y plataformas de análisis avanzadas. Historial comprobado de lograr mejoras de ROI del 300%+ mediante estrategias mejoradas con IA, con resultados que incluyen crecimiento de 15,000+ seguidores, aumentos del 75% en engagement y optimización 3x en tasas de conversión.",
+      en: "Digital Marketing Specialist and Marketing Strategist with 5 years of experience developing and executing comprehensive digital strategies. Expertise in SEO, SEM, social media management, data analysis, media planning, creative production, and campaign optimization across digital channels. Master's in Digital Marketing & AI from INESDI Madrid, with proven results including 40% customer traffic growth, 35% website traffic growth, 30% engagement increases, and stronger brand positioning in Spanish and U.S. markets.",
+      es: "Especialista y estratega de Marketing Digital con 5 años de experiencia desarrollando y ejecutando estrategias digitales integrales. Experiencia en SEO, SEM, gestión de redes sociales, análisis de datos, planificación de medios, producción creativa y optimización de campañas en canales digitales. Máster en Marketing Digital e IA por INESDI Madrid, con resultados comprobados como 40% de incremento en tráfico de clientes, 35% de crecimiento en tráfico web, 30% de aumento en engagement y mejor posicionamiento de marca en mercados de España y Estados Unidos.",
     },
     location: {
       en: "Zapopan, Jalisco",
@@ -633,8 +633,8 @@ export const translations = {
         es: "Zapopan, Jalisco",
       },
       availability: {
-        en: "Available for projects starting June 2025",
-        es: "Disponible para proyectos a partir de junio 2025",
+        en: "Available for strategic marketing projects",
+        es: "Disponible para proyectos estratégicos de marketing",
       },
     },
     form: {

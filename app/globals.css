@@ -140,15 +140,29 @@ body {
 
 /* ── Premium AI Portfolio Utilities ── */
 
-/* Gradient text — violet → coral → gold */
+/* Gradient text - tuned separately so light mode keeps enough contrast. */
 .gradient-text-primary {
-  background: linear-gradient(135deg, #a78bfa 0%, #f472b6 50%, #fbbf24 100%);
+  background: linear-gradient(135deg, #5b21b6 0%, #be185d 50%, #a16207 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-text-secondary {
+  background: linear-gradient(135deg, #be185d 0%, #a16207 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .gradient-text-primary {
+  background: linear-gradient(135deg, #a78bfa 0%, #f472b6 50%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark .gradient-text-secondary {
   background: linear-gradient(135deg, #f472b6 0%, #fbbf24 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -281,6 +295,12 @@ body {
   border-radius: 9999px;
   font-size: 0.75rem;
   font-weight: 500;
+  border: 1px solid hsl(262 83% 45% / 0.28);
+  background: hsl(262 83% 45% / 0.08);
+  color: hsl(262 70% 34%);
+}
+
+.dark .chip {
   border: 1px solid hsl(262 83% 65% / 0.3);
   background: hsl(262 83% 65% / 0.1);
   color: hsl(262 83% 80%);

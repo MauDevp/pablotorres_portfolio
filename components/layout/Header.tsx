@@ -61,7 +61,7 @@ export default function Header({ activeSection }: HeaderProps) {
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         isScrolled
-          ? "glass-card border-b border-white/5 shadow-lg shadow-black/20"
+          ? "glass-card border-b border-black/10 shadow-lg shadow-black/10 dark:border-white/5 dark:shadow-black/20"
           : "bg-transparent"
       }`}
     >
@@ -101,7 +101,7 @@ export default function Header({ activeSection }: HeaderProps) {
                 onClick={(e) => handleNavClick(e, item.id)}
                 className={`relative px-3 py-1.5 text-sm font-medium rounded-md transition-all duration-200 group ${
                   activeSection === item.id
-                    ? "text-violet-300"
+                    ? "text-violet-700 dark:text-violet-300"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -114,7 +114,7 @@ export default function Header({ activeSection }: HeaderProps) {
                   />
                 )}
                 {/* Hover bg */}
-                <span className="absolute inset-0 rounded-md bg-white/0 group-hover:bg-white/5 transition-colors duration-200" />
+                <span className="absolute inset-0 rounded-md bg-black/0 group-hover:bg-black/5 dark:group-hover:bg-white/5 transition-colors duration-200" />
               </Link>
             </motion.div>
           ))}
@@ -155,7 +155,7 @@ export default function Header({ activeSection }: HeaderProps) {
           {/* Mobile Menu */}
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden h-8 w-8 hover:bg-white/10">
+              <Button variant="ghost" size="icon" className="md:hidden h-8 w-8 hover:bg-black/5 dark:hover:bg-white/10">
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
@@ -184,8 +184,8 @@ export default function Header({ activeSection }: HeaderProps) {
                       onClick={(e) => handleNavClick(e, item.id)}
                       className={`flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
                         activeSection === item.id
-                          ? "bg-violet-500/15 text-violet-300 border border-violet-500/20"
-                          : "text-muted-foreground hover:text-foreground hover:bg-white/5"
+                          ? "bg-violet-500/15 text-violet-700 border border-violet-500/25 dark:text-violet-300 dark:border-violet-500/20"
+                          : "text-muted-foreground hover:text-foreground hover:bg-black/5 dark:hover:bg-white/5"
                       }`}
                     >
                       {activeSection === item.id && (

@@ -6,28 +6,30 @@ export function useScrollSpy(sectionIds: string[], offset = 100) {
   const [activeSection, setActiveSection] = useState<string>(sectionIds[0])
 
   useEffect(() => {
+    let rafId: number | null = null
+
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + offset
-
-      // Find the section that is currently in view
-      for (let i = sectionIds.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sectionIds[i])
-        if (!section) continue
-
-        const sectionTop = section.offsetTop
-
-        if (scrollPosition >= sectionTop) {
-          setActiveSection(sectionIds[i])
-          break
+      if (rafId !== null) return
+      rafId = requestAnimationFrame(() => {
+        const scrollPosition = window.scrollY + offset
+        for (let i = sectionIds.length - 1; i >= 0; i--) {
+          const section = document.getElementById(sectionIds[i])
+          if (!section) continue
+          if (scrollPosition >= section.offsetTop) {
+            setActiveSection(sectionIds[i])
+            break
+          }
         }
-      }
+        rafId = null
+      })
     }
 
-    // Initial check
     handleScroll()
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      if (rafId !== null) cancelAnimationFrame(rafId)
+    }
   }, [sectionIds, offset])
 
   return activeSection

@@ -53,7 +53,7 @@ export default function Hero() {
             >
               <span className="chip">
                 <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
-                {language === "en" ? "Digital Marketing Strategist & AI" : "Mtro. Marketing Digital & IA"}
+                {language === "en" ? "Digital Marketing Strategist" : "Estratega de Marketing Digital"}
               </span>
             </motion.div>
 
@@ -115,7 +115,7 @@ export default function Hero() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="glass-card border-violet-500/30 text-violet-300 hover:bg-violet-500/10 hover:border-violet-400/50 transition-all duration-200 w-full sm:w-auto"
+                  className="glass-card border-violet-500/30 text-violet-800 hover:bg-violet-500/10 hover:border-violet-500/50 dark:text-violet-300 dark:hover:border-violet-400/50 transition-all duration-200 w-full sm:w-auto"
                 >
                   {translations.hero.downloadCV[language]}
                   <Download className="ml-2 h-4 w-4" />
@@ -205,8 +205,8 @@ export default function Hero() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.8, duration: 0.5 }}
               >
-                <p className="text-xs font-semibold text-violet-300">🤖 AI Strategy</p>
-                <p className="text-xs text-muted-foreground">Certified Expert</p>
+                <p className="text-xs font-semibold text-violet-800 dark:text-violet-300">SEO + SEM Strategy</p>
+                <p className="text-xs text-muted-foreground">Media Planning</p>
               </motion.div>
 
               {/* Floating badge — Campaigns */}
@@ -217,7 +217,7 @@ export default function Hero() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1, duration: 0.5 }}
               >
-                <p className="text-xs font-semibold text-amber-300">📈 10+ Campaigns</p>
+                <p className="text-xs font-semibold text-amber-800 dark:text-amber-300">10+ Campaigns</p>
                 <p className="text-xs text-muted-foreground">High-Impact Results</p>
               </motion.div>
 
@@ -230,7 +230,7 @@ export default function Hero() {
               >
                 <div className="flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="text-xs font-medium text-emerald-300">
+                  <span className="text-xs font-medium text-emerald-800 dark:text-emerald-300">
                     {language === "en" ? "Available for projects" : "Disponible para proyectos"}
                   </span>
                 </div>

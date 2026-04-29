@@ -20,8 +20,8 @@ export const services: Service[] = [
       es: "SEO Basado en Datos", // SEO basado en datos (español)
     },
     description: {
-      en: "Boost your search rankings with advanced SEO strategies powered by AI analytics and competitive insights.",
-      es: "Mejora tu posicionamiento en buscadores con estrategias SEO avanzadas potenciadas por análisis de IA e insights competitivos.",
+      en: "Improve visibility with technical SEO, content optimization, WordPress improvements, and competitive insights tied to measurable traffic growth.",
+      es: "Mejora la visibilidad con SEO técnico, optimización de contenido, mejoras en WordPress e insights competitivos conectados a crecimiento medible de tráfico.",
     },
   },
   {
@@ -31,8 +31,8 @@ export const services: Service[] = [
       es: "Analítica de Rendimiento", // Analítica de rendimiento (español)
     },
     description: {
-      en: "Transform raw data into actionable insights with comprehensive analytics and AI-powered performance tracking.",
-      es: "Transforma datos brutos en insights accionables con análisis completos y seguimiento de rendimiento potenciado por IA.",
+      en: "Turn campaign data into decisions with GA4, Tag Manager, KPI dashboards, ROI reporting, and channel-by-channel optimization.",
+      es: "Convierte datos de campaña en decisiones con GA4, Tag Manager, dashboards de KPI, reportes de ROI y optimización por canal.",
     },
   },
   {
@@ -42,8 +42,8 @@ export const services: Service[] = [
       es: "Redes Sociales Estratégicas", // Redes sociales estratégicas (español)
     },
     description: {
-      en: "Captivate your audience with targeted social campaigns optimized by AI for maximum engagement and conversion.",
-      es: "Cautiva a tu audiencia con campañas sociales dirigidas y optimizadas por IA para máximo engagement y conversión.",
+      en: "Plan, publish, and optimize social campaigns across Instagram, Meta, TikTok, and UGC workflows to grow engagement and attendance.",
+      es: "Planifica, publica y optimiza campañas sociales en Instagram, Meta, TikTok y flujos UGC para crecer engagement y asistencia.",
     },
   },
   {
@@ -53,8 +53,8 @@ export const services: Service[] = [
       es: "Contenido Enfocado a Conversiones", // Contenido enfocado a conversiones (español)
     },
     description: {
-      en: "Create compelling, strategic content that resonates with your audience and drives measurable business results.",
-      es: "Crea contenido estratégico y convincente que resuene con tu audiencia y genere resultados comerciales medibles.",
+      en: "Build creative concepts, moodboards, scripts, reels, and promotional assets with a consistent visual direction and business purpose.",
+      es: "Construye conceptos creativos, moodboards, guiones, reels y piezas promocionales con dirección visual consistente y objetivo comercial.",
     },
   },
   {
@@ -64,8 +64,8 @@ export const services: Service[] = [
       es: "Automatización con IA", // Automatización con IA (español)
     },
     description: {
-      en: "Implement intelligent chatbots and marketing automation to enhance customer experience and generate leads 24/7.",
-      es: "Implementa chatbots inteligentes y automatización de marketing para mejorar la experiencia del cliente y generar leads 24/7.",
+      en: "Design customer journeys, loyalty programs, CRM workflows, and retargeting strategies that improve retention and conversion.",
+      es: "Diseña customer journeys, programas de lealtad, flujos CRM y estrategias de retargeting que mejoran retención y conversión.",
     },
   },
   {
@@ -75,9 +75,8 @@ export const services: Service[] = [
       es: "Campañas de Email Personalizadas", // Campañas de email personalizadas (español)
     },
     description: {
-      en: "Deliver high-converting email campaigns with AI-driven segmentation, personalization, and optimization.",
-      es: "Entrega campañas de email de alta conversión con segmentación, personalización y optimización impulsadas por IA.",
+      en: "Create segmented email campaigns and multichannel calendars aligned with funnel stages, promotions, and business objectives.",
+      es: "Crea campañas de email segmentadas y calendarios multicanal alineados con etapas del funnel, promociones y objetivos de negocio.",
     },
   },
 ]
-

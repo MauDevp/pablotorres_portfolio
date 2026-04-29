@@ -1,80 +1,116 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Badge } from "@/components/ui/badge"
+import { CalendarDays } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 import { translations } from "@/lib/translations"
 import { experiences } from "@/data/experience"
 
+const dotColors = [
+  "bg-violet-400 shadow-violet-400/50",
+  "bg-pink-400 shadow-pink-400/50",
+  "bg-amber-400 shadow-amber-400/50",
+  "bg-emerald-400 shadow-emerald-400/50",
+]
+
+const borderColors = [
+  "border-l-violet-500/60",
+  "border-l-pink-500/60",
+  "border-l-amber-500/60",
+  "border-l-emerald-500/60",
+]
+
+const textColors = [
+  "text-violet-800 dark:text-violet-300",
+  "text-pink-800 dark:text-pink-300",
+  "text-amber-800 dark:text-amber-300",
+  "text-emerald-800 dark:text-emerald-300",
+]
+
 export default function Experience() {
   const { language } = useLanguage()
 
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
-  }
-
   return (
-    <section id="experience" className="py-12 md:py-24 lg:py-32">
-      <div className="container px-4 md:px-6">
+    <section id="experience" className="relative py-20 md:py-28 overflow-hidden">
+      <div className="absolute inset-0 section-mesh pointer-events-none opacity-60" />
+
+      <div className="container px-4 md:px-6 relative z-10">
+        {/* Heading */}
         <motion.div
-          className="flex flex-col items-center justify-center space-y-4 text-center"
-          initial="hidden"
-          whileInView="visible"
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           viewport={{ once: true }}
-          variants={fadeIn}
         >
-          <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-2">
+          <span className="chip mb-4 mx-auto">
+            <span className="w-1.5 h-1.5 rounded-full bg-violet-400" />
             {language === "en" ? "Professional Journey" : "Trayectoria Profesional"}
-          </div>
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              {translations.experience.title[language]}
-            </h2>
-          </div>
+          </span>
+          <h2 className="font-syne text-4xl md:text-5xl font-bold gradient-text-primary mt-4">
+            {translations.experience.title[language]}
+          </h2>
         </motion.div>
 
-        <div className="mx-auto max-w-4xl py-12">
-          <div className="relative border-l border-primary/30 pl-6 ml-6">
-            {experiences.map((job, index) => (
-              <motion.div
-                key={index}
-                className="mb-12 relative"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="absolute -left-10 mt-1.5 h-4 w-4 rounded-full border border-primary bg-primary"></div>
-                <div className="space-y-3">
-                  <div>
-                    <h3 className="text-xl font-bold">{job.company[language]}</h3>
-                    <div className="flex flex-wrap items-center gap-2 mt-1">
-                      <Badge variant="outline" className="font-normal">
-                        {job.title[language]}
-                      </Badge>
-                      <span className="text-sm text-muted-foreground">{job.period[language]}</span>
+        {/* Timeline */}
+        <div className="mx-auto max-w-3xl">
+          {/* Gradient rail line */}
+          <div className="relative">
+            <div className="absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-violet-500 via-pink-500 to-amber-500 opacity-40" />
+
+            <div className="space-y-8">
+              {experiences.map((job, index) => {
+                const dot    = dotColors[index % dotColors.length]
+                const border = borderColors[index % borderColors.length]
+                const text   = textColors[index % textColors.length]
+
+                return (
+                  <motion.div
+                    key={index}
+                    className="relative pl-16"
+                    initial={{ opacity: 0, x: -24 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                    viewport={{ once: true }}
+                  >
+                    {/* Timeline dot */}
+                    <div className={`absolute left-3 top-4 h-4 w-4 rounded-full shadow-lg ${dot} -translate-x-1.5`} />
+
+                    {/* Card */}
+                    <div className={`glass-card gradient-border rounded-2xl p-6 border-l-2 ${border}`}>
+                      {/* Header */}
+                      <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
+                        <div>
+                          <h3 className={`font-syne font-bold text-xl ${text}`}>
+                            {job.company[language]}
+                          </h3>
+                          <p className="text-sm text-foreground/70 mt-0.5">{job.title[language]}</p>
+                        </div>
+
+                        {/* Period badge */}
+                        <div className="glass-card flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs text-muted-foreground shrink-0">
+                          <CalendarDays className="h-3 w-3" />
+                          {job.period[language]}
+                        </div>
+                      </div>
+
+                      {/* Responsibilities */}
+                      <ul className="space-y-2">
+                        {job.responsibilities[language].map((r, i) => (
+                          <li key={i} className="flex items-start gap-2.5 text-sm text-muted-foreground">
+                            <span className={`mt-2 h-1.5 w-1.5 rounded-full ${dot.split(" ")[0]} shrink-0`} />
+                            <span>{r}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                  </div>
-                  <ul className="space-y-2 text-muted-foreground">
-                    {job.responsibilities[language].map((responsibility, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0"></div>
-                        <p>{responsibility}</p>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
+                  </motion.div>
+                )
+              })}
+            </div>
           </div>
         </div>
       </div>
     </section>
   )
 }
-
